@@ -27,6 +27,22 @@ const style = StyleSheet.create({
     },
     listItemText: {
         fontSize: 18
+    },
+    input: {
+        height: 60,
+        padding: 8,
+        fontSize: 16,
+        borderBottomColor: 'black'
+    },
+    btn: {
+        backgroundColor: '#c2bad8',
+        padding: 9,
+        margin: 5
+    },
+    btnText: {
+        color: 'darkslateblue',
+        fontSize: 18,
+        textAlign: 'center'
     }
 })
 
