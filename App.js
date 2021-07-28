@@ -1,29 +1,43 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, FlatList, TouchableOpacity } from 'react-native'
+import { useState } from 'react'
 import Header from './components/Header'
+import style from './components/style/index'
+
 
 
 
 const App = () => {
+
+  const [items, setItems] = useState([
+    { id: Math.floor(100000 + Math.random() * 900000), text: 'Milk' },
+    { id: Math.floor(100000 + Math.random() * 900000), text: 'Milk' },
+    { id: Math.floor(100000 + Math.random() * 900000), text: 'Milk' },
+    { id: Math.floor(100000 + Math.random() * 900000), text: 'Apple' }
+  ])
+
+  const Item = ({ item }) => {
+    return (
+      <TouchableOpacity>
+        <View>
+          <Text>{item}</Text>
+        </View>
+      </TouchableOpacity>
+    )
+  }
+
   return (
-    <View>
-      <Header title="Shopping list"/>
+    <View style={style.container}>
+      <Header title="Shopping list" />
+      <FlatList
+        data={items}
+        renderItem={({ item }) => <Item item={item.text} />}
+      />
     </View>
   )
 }
 
 
-const style = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  text: {
-    fontSize: 20,
-    color: '#876'
-  }
-})
 
 
 
@@ -32,6 +46,5 @@ const style = StyleSheet.create({
 
 
 
-
-
+ 
 export default App
