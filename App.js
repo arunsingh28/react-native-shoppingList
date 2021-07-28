@@ -18,16 +18,16 @@ const App = () => {
 
   const Item = ({ item }) => {
     return (
-      <TouchableOpacity>
-        <View>
-          <Text>{item}</Text>
+      <TouchableOpacity style={style.listItem}>
+        <View style={style.listItemView}>
+          <Text style={style.listItemText}>{item}</Text>
         </View>
       </TouchableOpacity>
     )
   }
 
   return (
-    <View style={style.container}>
+    <View>
       <Header title="Shopping list" />
       <FlatList
         data={items}
@@ -40,11 +40,4 @@ const App = () => {
 
 
 
-
-
-
-
-
-
- 
 export default App
